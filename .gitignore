@@ -5,3 +5,6 @@ node_modules
 
 # All package-lock.json files
 package-lock.json
+
+# Enviroment Variables
+.env
