@@ -1,9 +1,9 @@
-const MongoContainer = require('../containers/mongo.container')
-const userSchema = require('../schemas/user.schema')
+const MongoDAO = require('./mongo.dao')
+const userSchema = require('../schemas/User')
 
 const collection = 'users'
 
-class UsersDAO extends MongoContainer {
+class UsersDAO extends MongoDAO {
   constructor() {
     super(collection, userSchema)
   }
@@ -17,4 +17,4 @@ class UsersDAO extends MongoContainer {
   }
 }
 
-module.exports = UsersDAO
+module.exports = new UsersDAO()

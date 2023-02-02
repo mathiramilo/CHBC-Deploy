@@ -1,6 +1,6 @@
 const { HTTP_STATUS } = require('../constants/api.constants')
 const { errorResponse } = require('../utils/api.utils')
-const logger = require('../utils/logger')
+const logger = require('../utils/logger.utils')
 
 const errorMiddleware = (err, req, res, next) => {
   const status = err.status || HTTP_STATUS.INTERNAL_SERVER_ERROR

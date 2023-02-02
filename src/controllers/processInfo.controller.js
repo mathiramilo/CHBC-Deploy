@@ -1,6 +1,5 @@
-const { HTTP_STATUS } = require('../constants/api.constants')
 const { successResponse } = require('../utils/api.utils')
-const { getProcessInfo } = require('../utils/process.utils')
+const { getProcessInfo } = require('../services/process.services')
 
 class ProcessInfoController {
   getProcessInfo(req, res, next) {

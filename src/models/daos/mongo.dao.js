@@ -1,21 +1,12 @@
 const mongoose = require('mongoose')
-const dbConfig = require('../../db/db.config')
 const { HttpError } = require('../../utils/api.utils')
 const { HTTP_STATUS } = require('../../constants/api.constants')
 
 mongoose.set('strictQuery', true)
 
-class MongoContainer {
+class MongoDAO {
   constructor(collection, schema) {
     this.model = mongoose.model(collection, schema)
-  }
-
-  static async connect() {
-    await mongoose.connect(dbConfig.mongodb.uri)
-  }
-
-  static async disconnect() {
-    await mongoose.disconnect()
   }
 
   async getAll(filter = {}) {
@@ -38,10 +29,7 @@ class MongoContainer {
   }
 
   async update(id, item) {
-    const updatedDocument = await this.model.updateOne(
-      { _id: id },
-      { $set: { ...item } }
-    )
+    const updatedDocument = await this.model.updateOne({ _id: id }, { $set: { ...item } })
     if (!updatedDocument.matchedCount) {
       const message = `Resource with id ${id} does not exists`
       throw new HttpError(HTTP_STATUS.NOT_FOUND, message)
@@ -59,4 +47,4 @@ class MongoContainer {
   }
 }
 
-module.exports = MongoContainer
+module.exports = MongoDAO

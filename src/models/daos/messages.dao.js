@@ -1,12 +1,12 @@
-const MongoContainer = require('../containers/mongo.container')
-const messageSchema = require('../schemas/message.schema')
+const MongoDAO = require('./mongo.dao')
+const messageSchema = require('../schemas/Message')
 
 const collection = 'messages'
 
-class MessagesDAO extends MongoContainer {
+class MessagesDAO extends MongoDAO {
   constructor() {
     super(collection, messageSchema)
   }
 }
 
-module.exports = MessagesDAO
+module.exports = new MessagesDAO()

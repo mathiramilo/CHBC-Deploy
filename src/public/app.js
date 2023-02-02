@@ -12,9 +12,7 @@ const inputPrice = document.getElementById('price')
 const inputThumbnail = document.getElementById('thumbnail')
 
 const successIndicatorBar = document.getElementById('success-indicator-bar')
-const successIndicatorMessage = document.getElementById(
-  'success-indicator-message'
-)
+const successIndicatorMessage = document.getElementById('success-indicator-message')
 
 /* Arrays that contains the necessary classes for each element */
 const successBarCls = ['bg-green-400']
@@ -115,7 +113,7 @@ function renderProducts(products) {
         <thead class="text-gray-800 border-b-[1px] border-gray-400">
           <tr>
             <th class="text-start pl-2 py-2">Title</th>
-            <th class="text-start py-2">Price</th>
+            <th class="text-start py-2">Price (USD)</th>
             <th class="text-center pr-2 py-2">Thumbnail</th>
           </tr>
         </thead>

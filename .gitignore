@@ -1,10 +1,8 @@
-# .gitignore file for deploy
-
-# All node_modules folders
+# .gitignore
 node_modules
 
-# All package-lock.json files
-package-lock.json
+# Logs
+logs
 
-# Enviroment Variables
+# Enviroment variables
 .env
