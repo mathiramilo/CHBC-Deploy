@@ -1,5 +1,5 @@
 const { faker } = require('@faker-js/faker')
-const ProductsDAO = require('../models/DAOs/products.dao')
+const ProductsDAO = require('../models/DAOs/products.dao.js')
 
 const getProducts = async () => await ProductsDAO.getAll()
 const getProduct = async id => await ProductsDAO.getById(id)
