@@ -4,7 +4,7 @@
   "description": "Deploy of CH Backend Challenges",
   "main": "src/server.js",
   "scripts": {
-    "start": "node .",
+    "start": "node src/server.js",
     "dev": "nodemon .",
     "tailwind-watch": "tailwindcss -i ./src/public/input.css -o ./src/public/dist/output.css --watch"
   },
